@@ -22,11 +22,13 @@ function get_images(){
 }
 function get_message(){
     return [
-        "have the most perfect rs and it's all bc of u",
+"────୨ৎ────",
+"i love u paankhi desai the loml",
+        "have the most perfect rs and it's all bc of u, i'm so thankful for u angel ˚˖𓍢ִ໋🦢˚",
         "lucky everything happened the way it did bc now we",
         "u to be mine from the very first day and i am so so",
-        "always wanted",
-        "u to be so stunning in every way i have",
+        "i have always wanted",
+        "u to be so stunning in every way from the way u do ur little dance to the way u roll ur eyes",
         "and i find",
         "familiar person in my life i know u so well",
         "being the most",
@@ -34,17 +36,16 @@ function get_message(){
         "feeling to hold ur hands for the very first time 𓍢ִ໋🌷͙֒✧˚ ༘ ⋆｡˚♡𓍢ִ",
         "and every date after that it was just the most wonderful",
         "ur hand so tight the first time we walked to the ice rink",
-        "wish i held",
-        "i want to be and we are meant to be !!!!!!!! i",
-        "everything i do everything i am",
+        "i wish i held",
+        "and everything i want to be and we are meant to be !!!!!!!! ༘˚⋆𐙚｡⋆𖦹.✧˚₊⊹♡",
+        "entangled with everything i do everything i am",
         "i cannot ever imagine life without u u are so",
         "and why i want u to be my wife!!!!!!!!!! ♡♡♡♡♡♡",
-        "why ur the most wonderful girl ever. 🧸ྀི",
-        "list all the reasons",
-        "i find you so ill",
-        "i love u and how much u mean to me and how pretty",
-        "how much",
-        "this is a very quick website i made to show u",
+        "but i want u to know why ur the most wonderful girl ever. 🧸ྀི",
+        "have not been feeling very good 😓😓",
+        "i think you are i know u",
+        "i love u and how much u mean to me and how insanely gorgeous",
+        "this is a very quick website i made to show u how much",
         "𓇼 ⋆.˚ 𓆉 𓆝 𓆡⋆.˚ 𓇼 paankhi desai!!!!! ִֶָ𓂃 ࣪˖ ִֶָ🐇་༘࿐"
     ];
 }
