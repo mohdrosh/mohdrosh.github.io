@@ -17,7 +17,14 @@ function get_images(){
         'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-09-01%20at%2021.08.01.jpeg',
         'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-09-01%20at%2021.07.59.jpeg', 
 'https://mohdrosh.github.io/images/21b03a39581c46601697165d57039b4c.jpg',
-'https://mohdrosh.github.io/images/WhatsApp Image 2024-09-01 at 21.58.30.jpeg'
+'https://mohdrosh.github.io/images/WhatsApp Image 2024-09-01 at 21.58.30.jpeg',
+'https://mohdrosh.github.io/images/1.jpeg',
+'https://mohdrosh.github.io/images/2.jpeg',
+'https://mohdrosh.github.io/images/3.jpeg',
+'https://mohdrosh.github.io/images/4.jpeg',
+'https://mohdrosh.github.io/images/5.jpeg',
+'https://mohdrosh.github.io/images/5.jpeg',
+'https://mohdrosh.github.io/images/7.jpeg'
     ];
 }
 function get_message(){
