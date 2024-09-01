@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For My Valentine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-style: italic;
+            gap: 30px;
+            background: pink;
+            filter: drop-shadow(0 0 5px #ff3e60);
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+        .full-heart-container {
+            position: relative;
+            width: 100px;
+            height: 90px;
+        }
+        .hc_image {
+            position: absolute;
+            width: 100px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+            -webkit-mask-box-image: var(--_m);
+                       mask-border: var(--_m);
+            clip-path: polygon(-41% 0,50% 91%, 141% 0);
+        }
+        img {
+            mask:
+             radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+             radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+             linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+            clip-path: polygon(-41% 0,50% 91%, 141% 0);
+        }
+        <span style="color:red;">
+        audio {
+            margin-top: 20px;
+            display: block;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        </span>
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="font-size: 60px;">For the love of my life</h1>
+        <span style="color:red;">
+        <audio controls autoplay>
+            <source src="audio/Scott-Street.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        </span>
+    </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script>
+        $(async function() {
+            var iter = 50;
+            var id = 0;
+            var images = get_images();
+            var message = get_message();
+
+            Math.Vector = function (x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            Math.Vector.prototype = {
+                clone: function () {
+                    return new Math.Vector(this.x, this.y);
+                },
+                negate: function () {
+                    this.x = -this.x;
+                    this.y = -this.y;
+                    return this;
+                },
+                neg: function () {
+                    return this.clone().negate();
+                },
+                addeq: function (v) {
+                    this.x += v.x;
+                    this.y += v.y;
+                    return this;
+                },
+                subeq: function (v) {
+                    return this.addeq(v.neg());
+                },
+                add: function (v) {
+                    return this.clone().addeq(v);
+                },
+                sub: function (v) {
+                    return this.clone().subeq(v);
+                },
+                multeq: function (c) {
+                    this.x *= c;
+                    this.y *= c;
+                    return this;
+                },
+                diveq: function (c) {
+                    this.x /= c;
+                    this.y /= c;
+                    return this;
+                },
+                mult: function (c) {
+                    return this.clone().multeq(c);
+                },
+                div: function (c) {
+                    return this.clone().diveq(c);
+                },
+                dot: function (v) {
+                    return this.x * v.x + this.y * v.y;
+                },
+                length: function () {
+                    return Math.sqrt(this.dot(this));
+                },
+                normal: function () {
+                    return this.clone().diveq(this.length());
+                }
+            };
+
+            function evade(evt) {
+                var $this = $(this),
+                    corner = $this.offset(),
+                    center = {x: corner.left + $this.outerWidth() / 2, y: corner.top + $this.outerHeight() / 2},
+                    dist = new Math.Vector(center.x - evt.pageX, center.y - evt.pageY),
+                    closest = $this.width() / 2;
+
+                // proximity test
+                if (dist.length() >= closest) {
+                    return;
+                }
+
+                // calculate new position
+                var delta = dist.normal().multeq(closest).sub(dist),
+                    newCorner = {left: corner.left + delta.x, top: corner.top + delta.y};
+
+                // bounds check
+                var padding = parseInt($this.css('padding-left'));
+                if (newCorner.left < -padding) {
+                    newCorner.left = -padding;
+                } else if (newCorner.left + $this.outerWidth() - padding > $(document).width()) {
+                    newCorner.left = $(document).width() - $this.outerWidth() + padding;
+                }
+                if (newCorner.top < -padding) {
+                    newCorner.top = -padding;
+                } else if (newCorner.top + $this.outerHeight() - padding > $(document).height()) {
+                    newCorner.top = $(document).height() - $this.outerHeight() + padding;
+                }
+
+                // move bumper
+                $this.offset(newCorner);
+            }
+
+            function beginEvade() {
+                $(this).bind('mousemove', evade);
+            }
+
+            function endEvade() {
+                $(this).unbind('mousemove', evade);
+            }
+
+            function spawnHeart(image, size) {
+                var posX = 0 + iter;
+                var posY = 0 + iter;
+                id = id + 1;
+                iter = (iter + 15);
+                var $heart_container = null;
+                if (id % 2 == 0) {
+                    $heart_container = $(`<div id="hc_${id}" class="full-heart-container"></div>`).css({'width': size + 'px', 'height': size + 'px', 'top': posY + 'px', 'left': posX + 'px'}).appendTo('body');
+                } else {
+                    $heart_container = $(`<div id="hc_${id}" class="full-heart-container"></div>`).css({'width': size + 'px', 'height': size + 'px', 'top': posY + 'px', 'left': 800 - posX + 'px'}).appendTo('body');
+                }
+                $(`<center><h1>${message.pop()}</h1></center>`).css({"padding": "25px"}).appendTo("body");
+
+                var $image = $(`${image}`).css({"width": size + 'px'}).appendTo(`#hc_${id}`);
+                $(`#hc_${id}`).wrap(`<span id="b_${id}" class="bumper" />`);
+                $(`#b_${id}`).bind('mouseover', beginEvade);
+                $(`#b_${id}`).bind('mouseout', endEvade);
+            }
+
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    // Generate a random index from 0 to i
+                    const j = Math.floor(Math.random() * (i + 1));
+                    // Swap elements at indices i and j
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+            images = shuffleArray(images);
+            async function run(counter) {
+                if (counter < images.length) {
+                    setTimeout(async function () {
+                        spawnHeart(`<img class="hc_image" load="lazy" src="${images[counter]}">`, Math.random() * (500 - 300) + 300);
+                        run(counter + 1);
+                    }, 50);
+                } else {
+
+                }
+            }
+
+            await run(0);
+        });
+    </script>
+</body>
+</html>
