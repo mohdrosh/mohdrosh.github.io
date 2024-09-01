@@ -9,14 +9,15 @@ function get_images(){
         'https://mohdrosh.github.io/images/WhatsApp%20I1mage%202024-09-01%20at%2021.10.48.jpeg',
         'https://mohdrosh.github.io/images/WhatsApp%20Im1age%202024-09-01%20at%2021.10.48.jpeg',
         'https://mohdrosh.github.io/images/WhatsApp%20Image%2020124-09-01%20at%2021.10.47.jpeg',
-        'https://mohdrosh.github.io/images/WhatsApp%20Image%2020214-091-01%20at%2021.10.47.jpeg',
         'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-091-01%20at%2021.10.47.jpeg',
         'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-09-01%20at%2021.10.46.jpeg',
         'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-09-01%20at%2021.10.43.jpeg',
         'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-09-01%20at%2021.08.03.jpeg',
         'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-09-01%20at%2021.08.02.jpeg',
         'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-09-01%20at%2021.08.01.jpeg',
-        'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-09-01%20at%2021.07.59.jpeg', 'https://mohdrosh.github.io/images/21b03a39581c46601697165d57039b4c.jpg'
+        'https://mohdrosh.github.io/images/WhatsApp%20Image%202024-09-01%20at%2021.07.59.jpeg', 
+'https://mohdrosh.github.io/images/21b03a39581c46601697165d57039b4c.jpg',
+'https://mohdrosh.github.io/images/WhatsApp Image 2024-09-01 at 21.58.30.jpeg'
     ];
 }
 function get_message(){
